@@ -10,7 +10,9 @@ app.use(express.json());
 
 connectDB();
 
-
+app.post("/", (req, res) => {
+  res.send("API is running");
+});
 
 app.use("/api/download", downloadRouter);
 
