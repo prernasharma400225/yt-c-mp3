@@ -44,15 +44,15 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-gradient-to-bl from-black to-red-800 h-40 text-white flex flex-col items-center p-6">
 
       
-      <h1 className="text-4xl font-bold mb-6 text-center">
-        🎧 YouTube to MP3 Converter
+      <h1 className="text-5xl font-bold mb-6 text-center">
+        🎧 YouTube to MP3 Converter 🎧
       </h1>
 
       
-      <div className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-xl">
+      <div className="bg-red-100 p-6 rounded-2xl shadow-lg w-full max-w-xl">
         <input
           type="text"
           value={url}
@@ -63,14 +63,14 @@ function App() {
 
         <button
           onClick={handleDownload}
-          className="mt-4 w-full bg-blue-500 hover:bg-blue-600 p-3 rounded-lg font-semibold transition"
+          className="mt-4 w-full bg-red-500 hover:bg-red-600 p-3 rounded-lg font-semibold transition"
         >
           {loading ? "Downloading..." : "Download MP3"}
         </button>
       </div>
 
       <div className="mt-10 w-full max-w-xl">
-        <h2 className="text-2xl font-semibold mb-4">📜 Download History</h2>
+        <h2 className="text-2xl font-semibold mb-4">📕Download History📕</h2>
 
         {history.length === 0 && (
           <p className="text-gray-400">No downloads yet</p>
@@ -80,13 +80,13 @@ function App() {
           {history.map((item, index) => (
             <div
               key={index}
-              className="bg-gray-800 p-4 rounded-lg flex justify-between items-center"
+              className="bg-red-50 text-gray-800 p-4 rounded-lg flex justify-between items-center"
             >
               <span className="text-sm truncate w-3/4">
                 {item.url}
               </span>
 
-              <span className="text-xs text-gray-400">
+              <span className="text-xs text-gray-600">
                 {new Date(item.createdAt).toLocaleString()}
               </span>
             </div>
